@@ -1,0 +1,321 @@
+\documentclass{ximera}
+\usepackage{amsmath}
+
+
+\newcommand*{\Perm}[2]{{}^{#1}\!P_{#2}}%
+\newcommand*{\Comb}[2]{{}^{#1}C_{#2}}%
+
+\title{ALES \& GRE Notlari - Erhan Tezcan}
+\author{Erhan Tezcan}
+
+\begin{document}
+\begin{abstract}
+    ALES ve GRE notlarim bu dokumandadir.
+\end{abstract}
+\maketitle
+
+\section{Hos Sorular}
+Bu bolumde genel olarak hosuma giden sorular yer aliyor.
+\begin{example}
+$$
+\frac{9}{16} < \frac{6}{x} < \frac{4}{5}
+$$
+kosulunu saglayan $x$ tam sayilarinin toplami kactir?
+\end{example}
+\begin{explanation}
+$$
+\frac{16}{9} > \frac{x}{6} > \frac{5}{4}
+$$
+$$
+\frac{16\times4}{9\times4} > \frac{x\times6}{6\times6} > \frac{5\times9}{4\times9}
+$$
+$$
+\frac{64}{36} > \frac{6x}{36} > \frac{45}{36}
+$$
+$$
+64 > 6X > 45
+$$
+$$
+10,... > x > 7,...
+$$
+O zaman $x = 8, 9, 10$ ve toplamlari $27$.
+\end{explanation}
+
+Genel olarak inequility cozerken taraflarin isareti cok onemli! Eksi ile ugrasmak ozellikle*** \par
+
+Standart Sapma sorularinda hesaplamaktan cok nasil dagilmislar bakilabilir, mantik kullan yani. \par 
+
+\begin{example}
+What is first number that is not a factor of $20!$? 
+\end{example}
+\begin{explanation}
+20 ve daha onceki sayilar hepsi factor, $21 = 7\times3$ ve $22=2\times11$ ama $23$ asal dolayisiyla cevap $23$.
+\end{explanation}
+
+\begin{example}
+2 evli cift ve 2 bekardan olusan 6 kisilik bir grup bir kanepeye oturacaktir, ciflerin her biri esleriyle yan yana olacaktir ve bekarlar yan yana olmayacaktir. Bu kisiler kanepeye kac farkli bicimde oturabilirler? 
+\end{example}
+\begin{explanation}
+\begin{equation*}
+    \begin{split}
+        \text{Istenilen durum} &= \text{Ciftler yan yana bekarlar serbest} \\
+        &- \text{Ciftler yanyana berkarlar yan yana} \\
+        &= 4! \times 2! \times 2! - 3! \times 2! \times 2! \times 2! = 96
+    \end{split}
+\end{equation*}
+\end{explanation}
+
+\begin{example}
+Bir torbada 3 beyaz 4 kirmizi top vardir. Bu torbadan ayni anda rastgele cekilen iki toptan en az birinin beyaz olma olasiligi kactir?
+\end{example}
+\begin{explanation}
+En az birinin beyaz olmasi, toplam olasiliktan sadece kirmizi olmasinin cikarilmasi ile bulunabilir. Dolayisiyla
+\[
+P = 1 - \frac{4}{7}
+\]
+\end{explanation}
+
+\begin{example}
+$ A = \{a, b, c, d, e, f, g\}$kumesinin elemanlari kullanilarka biri 3 elemanli, digeri 4 elemanli iki ayrik kume olusturulmak isteniyor. Buna gore $a$ ve $b$ elemanlari ayni kumede bulunmayacak bicimde, bu iki kume kac farkli sekilde olusturulabilir?
+\end{example}
+\begin{explanation}
+$a$ ve $b$ ayni kumede bulunmayacaksa $a$ ya da $b$ den birinin 3 elemanli, digerinin 4 elemanli alt kumede oldugu dusunulur. Buna gore:
+$$
+\binom{5}{2}\times \binom{3}{3}\times 2 \times 1 = 20
+$$
+
+\end{explanation}
+
+
+\section{Permutasyon \& Kombinasyon}
+\subsection{Kombinasyon}
+$n$ elemanli bir kumenin $r$'li kombinasyonu sayisi $C(n,r)$ seklinde gosterilir. Kombinasyonlarda mesela $\{a,b\}$ hesaplandiysa $\{b,a\}$ hesaplanmaz, yani permutasyonun aksine siralama onemli degil.
+\begin{equation}
+    \binom{n}{r} = \frac{n!}{(n-r)! \times r!}
+\end{equation}
+Kendimce aklimda tuttugum sekil soyle:
+\begin{equation}
+    \binom{n}{r} = \frac{\overbrace{n\times(n-1)\times...}^{r\text{ tane}}}{r!}
+\end{equation}
+\begin{remark}
+\begin{equation}
+    \binom{n}{r} = \binom{n}{n-r}
+\end{equation}
+\begin{equation}
+    \binom{n}{1} = n
+\end{equation}
+\begin{equation}
+    \binom{n}{0} = 1
+\end{equation}
+\end{remark}
+
+\begin{example}
+8 kisi arasindan kurulacak 6 kisilik takim kac farkli sekilde secilebilir?
+\end{example}
+\begin{explanation}
+$$
+\binom{8}{6} = 28
+$$
+\end{explanation}
+
+\begin{example}
+Bir cember ustunde 5 nokta vardir, bu bes noktanin (a) ikisinden gecen  kac farkli dogru cizilebilir? (b) uc noktasindan kosesi olan kac farkli ucgen cizilebilir?
+\end{example}
+\begin{explanation}
+$$
+\text{(a)    } \binom{5}{2} = 10
+$$
+$$
+\text{(b)    } \binom{5}{3} = 10
+$$
+\end{explanation}
+
+\begin{example}
+$A = \{1, 2, 3, 4, 5, 6\}$ kumesinin uc elemanli alt kumelerinin kac tanesinde en az 2 tane cift sayi bulunur?
+\end{example}
+\begin{explanation}
+Iki turlu olabilir: 2 cift 1 tek ve 3 cift sayi secilmis olabilir. 3 cift ve 3 tek sayi var zaten, oyleyse
+$$
+\binom{3}{2}\binom{3}{1} + \binom{3}{3} = 9 + 1 = 10
+$$
+\end{explanation}
+
+
+\begin{example}
+5 kitaptan 3 tanesi secilip bir rafa dizilecektir. Kac farkli sekilde secim yapilabilir? (Simdi kombinasyon kullanilacak iste)
+\end{example}
+\begin{explanation}
+$$
+C(5,3) = 10
+$$
+\end{explanation}
+
+
+\subsection{Permutasyon}
+Permutasyonda ise dizilim (siralama) onemlidir, kombinasyonda bu onemli degildir kombinasyonda sadece secim yapilir. 
+
+\begin{equation}
+    P(n,r) = \frac{n!}{(n-r)!}
+\end{equation}
+
+\begin{example}
+5 kitaptan 3 tanesi secilip bir rafa dizilecektir. Kac farkli sekilde dizilim yapilabilir?
+\end{example}
+\begin{explanation}
+$$
+P(5,3) = 60
+$$
+\end{explanation}
+
+Direkt olarak $n$ tane urunun siralanmasi: 
+\begin{equation}
+    n!
+\end{equation}
+\begin{example}
+5 kitaptan bir rafa kac farkli sekilde dizilebilir?
+\end{example}
+\begin{explanation}
+$$
+P(5,5) = 5! = 120
+$$
+\end{explanation}
+\subsection{Compound Interest (Bilesik Faiz)}
+Diyelim elimizde $P$ para var, yillik yuzde $f$ faizden $n$ yil duruyor. Sonunda elimizde ne kadar para olur dersek:
+\begin{equation}
+    P\left(1 + \frac{f}{100}\right)^y
+\end{equation}
+Aslinda formul ezberlemeye gerek yok, her iterasyonda parantez icindeki $1$ onceki faizi aliyor ve parantezin geri kalani ayni degere faiz uyguluyor. Bu parantezlerden carpim halinde $n$ tane oluyor.
+
+\subsection{Probability}
+\begin{example}
+If $P(A) = 0.60$ then what is the highest value $P(B)$ can have if $A$ and $B$ are mutually exclusive?
+\end{example}
+\begin{explanation}
+Highest value of $P(B) = 0.40$. Mutually exclusive means that if $A$ is happening $B$ wont happen, therefore $B$ can only happen $40\%$ of the time.
+\end{explanation}
+\textbf{Complement Rule}: $P(\text{not }A) = 1 - P(A)$ \par
+If $P(A) = 1$ then we say event $A$ is completely certain: it is absolutely guaranteed that it will happen.
+
+\par
+
+FOr general events, $P(A \lor B) = P(A) + P(B) - P(A \land B)$
+
+
+\subsection{Statistics} 
+\textbf{Negatively correlated}: If two variables are negatively correlated, then in general, as one increases the other decrease. The graph would have a general negative-slope trend. \par
+
+\textbf{Positively correlated}: If two variables are positively correlated, then in general, as one increases the other increases too. The graph would have a general positive-slope trend. \par
+
+\textbf{Median}: Middle number on the ordered list. (If the list has even number of entries, the median is the average of the middle two numbers.) \par
+
+\textbf{Mode}: The most frequent entry on a list, if each entry appears once then there is no mode. If multiple numbers are tied for most appearance, they are all modes. \par
+
+\textbf{Mean}: Average of the entries in the list. \par 
+
+\textbf{Range}: $max - min$ \par
+
+\textbf{Fundamental Counting Principal}: If task 1 can happen in $n_1$ ways, task 2 in $n_2$ ways and so on for $m$ events, the number of outcomes is
+$$
+n_1\times n_2 \times ... \times n_m
+$$
+
+\textbf{nCr} ne demek? $C(n,r)$ ile ayni. ($n$ choose $r$). Number of combination of $r$ things that can be selected from a pool of $n$ things.
+
+\textbf{Profit = Revenue - Cost}, yani kar esittir gelir eksi masraf.
+\subsection{Geometry}
+If a line has a negative y-intercept (where the line crosses y-axis), it must pass through which two quadrants?: III and IV. \par
+
+If a line has a negative slope, it  must pass through which two quadrants? II and IV. \par 
+
+Slopes of perpendicular lines are opposite reciprocals:
+$$
+m_1 = \frac{a}{b} \xrightarrow{\text{opposite reciprocal}} m_2 = -\frac{b}{a}
+$$
+Slopes of parallel lines are equal.
+Slope of a vertical line is \textbf{undefined}.
+Slope of a horizontal line is $\mathbf{0}$
+\textbf{Regular Polygon}: Her kenar ayni uzunlukta ve her koseler ayni acida.
+\textbf{Isosceles Triangle}: Ikizkenar Ucgen
+\textbf{Equilateral Triangle}: Eskenar Ucgen
+\textbf{Right-angled Triangle}: Dik-acili Ucgen
+\textbf{Perimeter}: Cevre
+\textbf{Rhombus}: Eskenar Dortgen (acilar 90 olunca kare oluyor, ama onun disinda herhangi bir sekilde olabilir)
+\textbf{Diameter}: Cap
+\textbf{Radius}: Yaricap
+\textbf{Perimeter}: Cevre
+\textbf{Circumference}: Cevre (Daire)
+\textbf{N-kenar poligon ic acilar toplami}: $(n-2)\times 180^\circ$
+
+\textbf{Guzel Pisagor ezberi}: $3,4,5$ var, $5,12,13$ var, $7,24,25$ var ve $8,15,17$.
+
+An angle inscribed in a semicircle is always a $90^\circ$ angle. (Capi goren aci 90 derece)
+\subsection{Numbers}
+
+\textbf{Mixed Number}
+$6\frac{3}{5}$ bir mixed numberdir. Ek olarak, $\frac{18}{5}$ ayni deger olsa da buna \textbf{Improper Fraction} denir. \par
+
+\textbf{Proportion vs Ratio.} Ratio is a single fraction. Proportion is an equation with fractions on the both sides. \par
+
+\textbf{Rounding} yaparken suna dikkat et: 5ten kucuk ise asagi, buyuk esit ise yukari yuvarlaniyor. \par
+
+\textbf{Quotinent}: The result of a division is called quotinent. \par
+
+When we divide $p$ by $q$, what is the name of the role q has, the role of the thing which we divide?: $q$ is \textbf{Divisor}, also $p$ is \textbf{Dividend}
+
+\textbf{Finding Factors}: $N = p_1^{a_1}\times p_2^{a_2} \times ... p_n^{a_n}$ ise mesela ustlerinin bir fazlasinin carpimi ($p$ ler prime).
+$$
+#factors_of_N = (a_1+1)\times(a_2+1)\times...\times(a_n+1)
+$$
+
+Polinom hakkinda guzel bir sey:
+$$
+x^3-1=(x-1)(x^2+x+1)
+$$
+
+Roman numerals:
+\begin{itemize}
+    \item I = 1 (Unum)
+    \item V = 5 (Quinque)
+    \item X = 10 (Decem)
+    \item L = 50 (Quinquaginta)
+    \item C = 100 (Centum)
+    \item D = 500 (Quingenti)
+    \item M = 1000 (Mille)
+\end{itemize}
+
+Roman money currencies (denarius):
+\begin{itemize}
+    \item \sout{\textit{I}} = 1 (as)
+    \item \sout{II} = 2 (Dupondious)
+    \item \sout{IIS} = 2.5 (Sestertius)
+    \item \sout{V} = 5 (Quinarius)
+    \item \sout{X} = 10 (Denarius) (bu en cok kullanilan)
+\end{itemize}
+%\begin{example}
+%Did you know that $2\times 3 = 6$?
+%\begin{explanation}
+%This is my explanation of my example.
+%\begin{align*}
+%    2\times 3 &= 2 + 2 + \answer[given]{2}\\
+%    &= 6
+%\end{align*}
+%\end{explanation}
+%\end{example}
+
+%\begin{problem}
+%Here is a multiple choice problem.
+%\begin{multipleChoice}
+%\choice[correct]{I'm right!}
+%\choice{I'm not right}
+%\end{multipleChoice}
+%\end{problem}
+
+%\begin{exercise}
+%\begin{selectAll}
+%\choice[correct]{Select me.}
+%\choice[correct]{Me too!}
+%\choice{Not me.}
+%\end{selectAll}
+%\end{exercise}
+
+\end{document}

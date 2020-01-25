@@ -1,0 +1,54 @@
+\documentclass[a4paper, 11pt]{amsart}
+\usepackage{amsmath}
+
+\begin{document}
+
+\textbf{Question.} Supposing a data set $X = \{(x_i, y_i)\}_{i=1}^{N}$, show that the matrix $A$ is invertible where
+$$
+A = 
+\begin{bmatrix}
+    N      & \sum_{i=1}^{N} x_i \\
+    \sum_{i=1}^{N} x_i       & \sum_{i=1}^{N} x_i^2 \\
+\end{bmatrix}
+$$
+
+\vspace{1cm}
+\textbf{Demonstration.} We know that a 2 by 2 square matrix $A$ is not invertible if its determinant is 0, i.e.: $\text{det}(A) = 0$. Thus by showing $\text{det}(A) \ne 0$ we can infer $A$ to be invertible.
+
+$$
+\text{det}(A) = N\sum_{i=1}^{N} x_i^2 -  \sum_{i=1}^{N} x_i \sum_{j=1}^{N} x_j
+$$
+$$
+\text{det}(A) = N\sum_{i=1}^{N} x_i^2 - ( \sum_{i=1}^{N} x_i^2 + \sum_{i=1}^{N-1}\sum_{j=i+1}^{N} 2 x_i x_j )
+$$
+$$
+\text{det}(A) = (N-1)\sum_{i=1}^{N} x_i^2 - \sum_{i=1}^{N-1}\sum_{j=i+1}^{N} 2 x_i x_j 
+$$
+
+By doing some examples for small positive $N$ greater than 1, we find a pattern that can be written as:
+$$
+(N-1)\sum_{i=1}^{N} x_i^2 - \sum_{i=1}^{N-1}\sum_{j=i+1}^{N} 2 x_i x_j = \sum_{i=1}^{N-1}\sum_{j=i+1}^{N} (x_i - x_j)^2 
+$$
+$$
+(N-1)\sum_{i=1}^{N} x_i^2 = \sum_{i=1}^{N-1}\sum_{j=i+1}^{N} ((x_i - x_j)^2 + 2 x_i x_j )
+$$
+$$
+(N-1)\sum_{i=1}^{N} x_i^2 = \sum_{i=1}^{N-1}\sum_{j=i+1}^{N} (x_i^2 - 2x_i x_j + x_j^2 + 2 x_i x_j )
+$$
+$$
+(N-1)\sum_{i=1}^{N} x_i^2 = \sum_{i=1}^{N-1}\sum_{j=i+1}^{N} (x_i^2+ x_j^2)
+$$
+$$
+(N-1)\sum_{i=1}^{N} x_i^2 = \sum_{i=1}^{N-1}\sum_{j=i+1}^{N} x_i^2 + \sum_{i=1}^{N-1}\sum_{j=i+1}^{N} x_j^2
+$$
+From the first sum on the right hand-side of the equation we get $(N-1)x_1^2 + (N-2)x_2^2 + \ldots + (N-k)x_k^2 + \ldots + x_{N-1}^2$, and from the second sum on the right hand-side of the equation we get $1x_2^2 + 2x_3^2 + \ldots + (N-2)x_{N-1}^2 + (N-1)x_N^2$. Clearly, the sum of both is equal to the left hand-side of the equation which is $x_1^2 + x_2^2 + \ldots + x_N^2$. Finally we are able to say:
+$$
+\text{det}(A) = \sum_{i=1}^{N-1}\sum_{j=i+1}^{N} (x_i - x_j)^2
+$$
+Note that $i\ne j$ for any instance of $(x_i - x_j)^2$, so for this sum to be equal to 0, we must have the equality:
+$$
+x_1 = x_2 = ... = x_N
+$$
+Knowing that our data set has some distribution, we know that this is not the case, therefore are able to say $\text{det}(A) \ne 0$ for any $X = \{(x_i, y_i)\}_{i=1}^{N}$ and thus $A$ is invertible.
+
+\end{document}
