@@ -1,11 +1,11 @@
-# What is in this repo?
+# English Studies
 This repository holds the files that I have prepared during my GRE &amp; TOEFL studies. Feel free to download and use them if you want!
 
 Majority of the vocabulary here I have learned thanks to [Magoosh](https://magoosh.com/), which I strongly advise.
 
 Also note that these files may contain Turkish notes in it.
 
-# General Vocabulary Tips for English Studies (TOEFL, GRE, IELTS, ...)
+## General Tips (TOEFL, GRE, IELTS, ...)
 
 - Prepare yourself a document where words with similar meaning (or maybe synonyms) are adjacent. This is a very good practice because there will be times where you feel like you have seen a word with similar meaning in the document but you don't know where it is, therefore you would have to search for it. During this search, you technically revise a lot of words. As the document gets bigger, every word in it gets revised over and over.
 
